@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowIcon } from "@/app/components/icons";
+import { ProjectGallery } from "@/app/components/project-gallery";
 import { getNextProject, getProject, projects } from "@/app/data/projects";
 
 export const dynamicParams = false;
@@ -99,22 +100,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
       )}
 
       {project.gallery.length > 0 && (
-        <section className="case-gallery" aria-label={`${project.title} gallery`}>
-          {project.gallery.map((image, index) => (
-            <figure className={`gallery-item gallery-item-${index + 1}`} key={index} data-reveal>
-              <div>
-                <Image
-                  src={image}
-                  alt={`${project.title} gallery image ${index + 1}`}
-                  fill
-                  placeholder="blur"
-                  sizes={index === 0 || index === 3 ? "100vw" : "(max-width: 820px) 100vw, 50vw"}
-                />
-              </div>
-              <figcaption>{String(index + 1).padStart(2, "0")} / {project.title}</figcaption>
-            </figure>
-          ))}
-        </section>
+        <ProjectGallery title={project.title} images={project.gallery} />
       )}
 
       <section className="next-project">

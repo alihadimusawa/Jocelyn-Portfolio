@@ -46,7 +46,7 @@ export const sectionCopy = {
     eyebrow: "Selected projects",
     title: "Selected",
     emphasis: "work.",
-    period: "2023—TBA",
+    period: "2023—2026",
   },
   profile: {
     eyebrow: "Profile",

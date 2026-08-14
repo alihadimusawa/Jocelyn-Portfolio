@@ -9,6 +9,70 @@
   transform: translateY(0);
 }
 
+.motion-ready [data-reveal="gallery"],
+.motion-ready [data-reveal="gallery-archive"] {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready [data-reveal="gallery"] .gallery-media {
+  opacity: 0;
+  clip-path: inset(7% 0 0);
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 600ms ease,
+    clip-path 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-ready [data-reveal="gallery"] .gallery-media img {
+  transform: scale(1.045);
+}
+
+.motion-ready [data-reveal="gallery"] figcaption {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  transition: opacity 450ms ease 130ms, transform 650ms cubic-bezier(0.16, 1, 0.3, 1) 130ms;
+}
+
+.motion-ready [data-reveal="gallery"].is-visible .gallery-media,
+.motion-ready [data-reveal="gallery"].is-visible figcaption {
+  opacity: 1;
+  clip-path: inset(0);
+  transform: translate3d(0, 0, 0);
+}
+
+.motion-ready [data-reveal="gallery"].is-visible .gallery-media img {
+  transform: scale(1);
+}
+
+.motion-ready [data-reveal="gallery-archive"] .gallery-archive-item {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 420ms ease, transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-ready [data-reveal="gallery-archive"].is-visible .gallery-archive-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.motion-ready [data-reveal="gallery-archive"] .gallery-archive-item:nth-child(5n + 2) {
+  transition-delay: 35ms;
+}
+
+.motion-ready [data-reveal="gallery-archive"] .gallery-archive-item:nth-child(5n + 3) {
+  transition-delay: 70ms;
+}
+
+.motion-ready [data-reveal="gallery-archive"] .gallery-archive-item:nth-child(5n + 4) {
+  transition-delay: 105ms;
+}
+
+.motion-ready [data-reveal="gallery-archive"] .gallery-archive-item:nth-child(5n + 5) {
+  transition-delay: 140ms;
+}
+
 .motion-ready .profile-intro[data-reveal] :is(.eyebrow, h2, .profile-role, .profile-facts, .profile-mark),
 .motion-ready .profile-chapter[data-reveal] :is(header, .profile-entry, .profile-organization-name, .profile-data-list > li, .profile-awards > li, .profile-responsibilities > li) {
   opacity: 0;
@@ -96,6 +160,24 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .gallery-featured-item:hover .gallery-media img {
+    filter: saturate(1.04) contrast(1.02);
+    transform: scale(1.025);
+  }
+
+  .gallery-archive-item:hover {
+    background: var(--cream);
+  }
+
+  .gallery-archive-item:hover .gallery-media img {
+    transform: scale(1.045);
+  }
+
+  .gallery-featured-item:hover .gallery-label,
+  .gallery-archive-item:hover .gallery-number {
+    color: var(--wine);
+  }
+
   .project-tile:hover .project-visual > img,
   .project-tile:focus-within .project-visual > img,
   .motion-ready [data-reveal="project"].is-visible:hover .project-visual > img,
@@ -249,4 +331,3 @@
   from { scale: 1.06; }
   to { scale: 1; }
 }
-
