@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: `%s — ${person.name}`,
   },
   description:
-    `Portfolio of ${person.name}, a ${person.city}-based interior designer and BINUS University student.`,
+    `I’m ${person.name}, a ${person.city}-based interior designer and BINUS University student.`,
 };
 
 export const viewport: Viewport = {

@@ -8,26 +8,26 @@ export function ProjectWall({ projects }: { projects: readonly Project[] }) {
     <div className="project-wall">
       {projects.map((project, index) => (
         <article
-          className={`project-tile project-tile-${index + 1}${project.upcoming ? " is-upcoming" : ""}`}
+          className={`project-tile project-tile-${index + 1}${project.cover ? "" : " is-placeholder"}${project.upcoming ? " is-upcoming" : ""}`}
           data-reveal="project"
           key={project.slug}
         >
           <Link href={`/projects/${project.slug}`}>
             <div className="project-visual">
-              {project.upcoming ? (
-                <div className="project-placeholder" aria-hidden="true">
-                  <span>{project.number}</span>
-                  <small>Case study reserved</small>
-                </div>
-              ) : (
+              {project.cover ? (
                 <Image
                   src={project.cover}
                   alt=""
                   fill
                   placeholder="blur"
                   sizes={index === 0 ? "(max-width: 820px) 100vw, 92vw" : "(max-width: 820px) 100vw, 47vw"}
-                  style={{ objectPosition: project.coverPosition }}
+                  style={{ objectPosition: project.coverPosition ?? "center" }}
                 />
+              ) : (
+                <div className="project-placeholder" aria-hidden="true">
+                  <span>{project.number}</span>
+                  <small>{project.upcoming ? "Case study reserved" : "Project images coming soon"}</small>
+                </div>
               )}
 
               <span className="project-accent" aria-hidden="true" />

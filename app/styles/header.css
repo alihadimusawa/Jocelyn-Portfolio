@@ -11,12 +11,12 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.96);
+  background: rgb(var(--paper-rgb) / 0.96);
   transition: background 240ms ease, backdrop-filter 240ms ease;
 }
 
 .global-header.is-scrolled {
-  background: rgba(255, 255, 255, 0.84);
+  background: rgb(var(--paper-rgb) / 0.84);
   backdrop-filter: blur(18px);
 }
 
@@ -130,4 +130,3 @@
 .mobile-navigation {
   display: none;
 }
-

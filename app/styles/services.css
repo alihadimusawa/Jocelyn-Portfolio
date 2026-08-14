@@ -2,7 +2,7 @@
 .service-section {
   padding: clamp(110px, 13vw, 190px) clamp(24px, 6vw, 96px);
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgb(var(--paper-rgb) / 0.7);
 }
 
 .service-heading {
@@ -48,7 +48,7 @@
   grid-row: span 2;
   min-height: 520px;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
 }
 
 .service-card-2,
@@ -162,4 +162,3 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-

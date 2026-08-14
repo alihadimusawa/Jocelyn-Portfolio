@@ -14,8 +14,8 @@
   inset: -20%;
   opacity: 0.52;
   background-image:
-    linear-gradient(rgba(10, 10, 10, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 10, 10, 0.12) 1px, transparent 1px);
+    linear-gradient(rgb(var(--ink-rgb) / 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--ink-rgb) / 0.12) 1px, transparent 1px);
   background-size: 56px 56px;
   -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 45%, #000 25%, transparent 86%);
   mask-image: radial-gradient(ellipse 95% 85% at 50% 45%, #000 25%, transparent 86%);
@@ -83,5 +83,5 @@
 .ambient-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 44%, transparent 60%, rgba(255, 255, 255, 0.18) 100%);
+  background: radial-gradient(circle at 50% 44%, transparent 60%, rgb(var(--paper-rgb) / 0.18) 100%);
 }

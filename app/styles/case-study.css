@@ -1,7 +1,7 @@
 /* Project details */
 .case-page {
   padding-top: var(--header-h);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgb(var(--paper-rgb) / 0.7);
 }
 
 .case-hero {
@@ -11,7 +11,7 @@
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
   overflow: hidden;
 }
 
@@ -25,12 +25,50 @@
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.12) 30%, rgba(10, 10, 10, 0.86) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(var(--ink-rgb) / 0.12) 30%,
+    rgb(var(--ink-rgb) / 0.86) 100%
+  );
 }
 
 .case-cover img {
   object-fit: cover;
   animation: case-cover-in 1s cubic-bezier(0.2, 0.75, 0.2, 1) both;
+}
+
+.case-cover.is-placeholder {
+  background:
+    linear-gradient(135deg, rgb(var(--paper-rgb) / 0.08), transparent 45%),
+    var(--surface-dark);
+}
+
+.case-cover-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--cream);
+}
+
+.case-cover-placeholder span {
+  color: transparent;
+  font-size: clamp(180px, 38vw, 560px);
+  font-weight: 400;
+  line-height: 0.7;
+  letter-spacing: -0.09em;
+  opacity: 0.3;
+  -webkit-text-stroke: 1px var(--cream);
+}
+
+.case-cover-placeholder small {
+  position: absolute;
+  top: clamp(28px, 4vw, 60px);
+  right: clamp(24px, 5vw, 80px);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .case-cover > span {
@@ -74,7 +112,7 @@
   border: 1px solid var(--cream);
   color: var(--wine);
   background: var(--cream);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgb(var(--ink-rgb) / 0.25);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -92,7 +130,7 @@
 .back-link:focus-visible {
   color: var(--cream);
   background: var(--wine);
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+  box-shadow: 0 14px 34px rgb(var(--ink-rgb) / 0.34);
   transform: translateY(-2px);
 }
 
@@ -310,7 +348,7 @@
 .next-project {
   padding: clamp(80px, 10vw, 150px) clamp(24px, 6vw, 96px);
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
 }
 
 .next-project > p {
@@ -350,7 +388,7 @@
   flex-direction: column;
   justify-content: center;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
 }
 
 .not-found > span,

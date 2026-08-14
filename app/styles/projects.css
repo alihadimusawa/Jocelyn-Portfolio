@@ -1,7 +1,7 @@
 /* Projects */
 .project-showcase {
   padding: clamp(110px, 13vw, 200px) clamp(20px, 4vw, 64px);
-  background: rgba(255, 255, 255, 0.64);
+  background: rgb(var(--paper-rgb) / 0.64);
   overflow: hidden;
 }
 
@@ -140,7 +140,7 @@
   position: relative;
   aspect-ratio: 5 / 4;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
   overflow: hidden;
 }
 
@@ -153,11 +153,11 @@
   z-index: 1;
   inset: 42% 0 0;
   content: "";
-  background: linear-gradient(180deg, transparent, rgba(10, 10, 10, 0.8));
+  background: linear-gradient(180deg, transparent, rgb(var(--ink-rgb) / 0.8));
   pointer-events: none;
 }
 
-.project-tile.is-upcoming .project-visual::after {
+.project-tile.is-placeholder .project-visual::after {
   display: none;
 }
 
@@ -184,7 +184,7 @@
   background: var(--cream);
 }
 
-.project-tile:nth-child(odd).is-upcoming .project-overlay {
+.project-tile:nth-child(odd).is-placeholder .project-overlay {
   color: var(--ink);
 }
 

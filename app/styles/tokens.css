@@ -1,12 +1,15 @@
 :root {
-  --paper: #ffffff;
-  --ink: #0a0a0a;
-  --gray: #c9cac5;
-  --muted: #6f706c;
+  --paper: #fffdf8;
+  --ink: #2f211d;
+  --surface-dark: #3a2721;
+  --gray: #d2cac2;
+  --muted: #6f625c;
   --cream: #f5efc6;
   --wine: #4d0e12;
-  --line: rgba(10, 10, 10, 0.2);
-  --inverse-line: rgba(255, 255, 255, 0.24);
+  --ink-rgb: 47 33 29;
+  --paper-rgb: 255 253 248;
+  --line: rgb(var(--ink-rgb) / 0.18);
+  --inverse-line: rgb(245 239 198 / 0.26);
   --header-h: 72px;
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

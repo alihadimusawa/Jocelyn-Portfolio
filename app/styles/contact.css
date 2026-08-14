@@ -3,7 +3,7 @@
   min-height: 92vh;
   padding: clamp(80px, 9vw, 135px) clamp(24px, 6vw, 96px) 30px;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
 }
 
 .contact-kicker {

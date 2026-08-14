@@ -36,7 +36,6 @@ export const navigation = [
 export const sectionCopy = {
   hero: {
     summary: ["Thoughtful interiors", "for everyday life."],
-    portraitNote: "Portrait placeholder",
     portfolioIndex: `${person.initials} / ${portfolioYear}`,
   },
   introduction: {

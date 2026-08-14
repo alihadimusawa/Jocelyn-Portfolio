@@ -23,8 +23,6 @@ body > main {
   z-index: 1;
 }
 
-
-
 ::selection {
   color: var(--paper);
   background: var(--ink);
@@ -62,10 +60,6 @@ button:focus-visible {
   border: 0;
 }
 
-.desktop-only {
-  display: inline-flex;
-}
-
 .skip-link {
   position: fixed;
   z-index: 1000;
@@ -73,7 +67,7 @@ button:focus-visible {
   left: 10px;
   padding: 12px 18px;
   color: var(--paper);
-  background: var(--ink);
+  background: var(--surface-dark);
   transform: translateY(-160%);
   transition: transform 180ms ease;
 }
@@ -81,4 +75,3 @@ button:focus-visible {
 .skip-link:focus {
   transform: translateY(0);
 }
-

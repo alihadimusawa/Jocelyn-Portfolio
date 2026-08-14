@@ -140,10 +140,6 @@
     display: none;
   }
 
-  .desktop-only {
-    display: none;
-  }
-
   .menu-toggle {
     position: relative;
     z-index: 3;
@@ -188,7 +184,7 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     color: var(--paper);
-    background: var(--ink);
+    background: var(--surface-dark);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-18px);
@@ -238,7 +234,7 @@
   }
 
   .hero-portrait img {
-    object-position: center 23%;
+    object-position: center 100%;
   }
 
   .hero-content {
@@ -292,7 +288,7 @@
     left: 12px;
     height: 62px;
     padding: 0 11px;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgb(var(--paper-rgb) / 0.92);
     backdrop-filter: blur(12px);
   }
 
@@ -310,10 +306,6 @@
   }
 
   .hero-index {
-    display: none;
-  }
-
-  .portrait-note {
     display: none;
   }
 
@@ -510,6 +502,10 @@
 
   .case-title {
     padding: 26px 20px 30px;
+  }
+
+  .case-cover-placeholder small {
+    display: none;
   }
 
   .case-title-copy {

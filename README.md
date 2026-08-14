@@ -29,4 +29,4 @@ npm run build
 
 Each object in `app/data/projects.ts` automatically powers its homepage card and its own `/projects/[slug]` page. To add a project, import its images, add one project object, and keep its `slug` unique.
 
-The current portrait and project images are placeholders. Replace the image files or update their imports when Jocelyn's final assets are available.
+The real portrait is stored at `public/images/jocelyn_profile.jpeg`. Projects without a `cover` or gallery images automatically use the built-in visual placeholder until their final images are added.

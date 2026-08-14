@@ -36,17 +36,23 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
   return (
     <main className="case-page" id="main-content">
       <section className="case-hero">
-        <div className="case-cover" data-reveal>
-          <Image
-            src={project.cover}
-            alt={project.imagePlaceholder ? `Temporary cover image for ${project.title}` : `${project.title} cover`}
-            fill
-            preload
-            placeholder="blur"
-            sizes="100vw"
-            style={{ objectPosition: project.coverPosition }}
-          />
-          {project.imagePlaceholder && <span className="desktop-only">Project image · temporary</span>}
+        <div className={`case-cover${project.cover ? "" : " is-placeholder"}`} data-reveal>
+          {project.cover ? (
+            <Image
+              src={project.cover}
+              alt={`${project.title} cover image`}
+              fill
+              preload
+              placeholder="blur"
+              sizes="100vw"
+              style={{ objectPosition: project.coverPosition ?? "center" }}
+            />
+          ) : (
+            <div className="case-cover-placeholder" aria-hidden="true">
+              <span>{project.number}</span>
+              <small>Project images coming soon</small>
+            </div>
+          )}
         </div>
 
         <div className="case-title" data-reveal>
@@ -92,22 +98,24 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         </section>
       )}
 
-      <section className="case-gallery" aria-label={`${project.title} gallery`}>
-        {project.gallery.map((image, index) => (
-          <figure className={`gallery-item gallery-item-${index + 1}`} key={index} data-reveal>
-            <div>
-              <Image
-                src={image}
-                alt={project.imagePlaceholder ? `Temporary gallery image ${index + 1} for ${project.title}` : `${project.title} gallery image ${index + 1}`}
-                fill
-                placeholder="blur"
-                sizes={index === 0 || index === 3 ? "100vw" : "(max-width: 820px) 100vw, 50vw"}
-              />
-            </div>
-            <figcaption>{String(index + 1).padStart(2, "0")} / {project.imagePlaceholder ? "Temporary image — replace with project work" : project.title}</figcaption>
-          </figure>
-        ))}
-      </section>
+      {project.gallery.length > 0 && (
+        <section className="case-gallery" aria-label={`${project.title} gallery`}>
+          {project.gallery.map((image, index) => (
+            <figure className={`gallery-item gallery-item-${index + 1}`} key={index} data-reveal>
+              <div>
+                <Image
+                  src={image}
+                  alt={`${project.title} gallery image ${index + 1}`}
+                  fill
+                  placeholder="blur"
+                  sizes={index === 0 || index === 3 ? "100vw" : "(max-width: 820px) 100vw, 50vw"}
+                />
+              </div>
+              <figcaption>{String(index + 1).padStart(2, "0")} / {project.title}</figcaption>
+            </figure>
+          ))}
+        </section>
+      )}
 
       <section className="next-project">
         <p>Next project</p>

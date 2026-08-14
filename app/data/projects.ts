@@ -1,7 +1,4 @@
 import type { StaticImageData } from "next/image";
-import apartmentImage from "@/public/images/project-apartment.png";
-import bedroomImage from "@/public/images/project-bedroom.png";
-import livingImage from "@/public/images/jocelyn-hero.png";
 
 type ProjectFact = {
   label: string;
@@ -21,15 +18,14 @@ export type Project = {
   category: string;
   year: string;
   location: string;
-  cover: StaticImageData;
-  coverPosition: string;
+  cover?: StaticImageData;
+  coverPosition?: string;
   summary: string;
   description: string;
   facts: readonly ProjectFact[];
   focus: readonly string[];
   sections: readonly ProjectSection[];
   gallery: readonly StaticImageData[];
-  imagePlaceholder: boolean;
   upcoming?: boolean;
 };
 
@@ -41,10 +37,8 @@ export const projects: readonly Project[] = [
     category: "Residential",
     year: "2023",
     location: "Bandung",
-    cover: livingImage,
-    coverPosition: "center",
     summary: "A 91.5 m² tiny-house concept shaped around natural light, a sloped-roof skylight, and an eco-house material language.",
-    description: "Jocelyn’s first college interior design studio project explores a tiny-house approach for a residence in Kenari Kebon Kopi, Bandung.",
+    description: "For my first college interior design studio project, I explored a tiny-house approach for a residence in Kenari Kebon Kopi, Bandung.",
     facts: [
       { label: "Type", value: "Residential" },
       { label: "Location", value: "Kenari Kebon Kopi, Bandung" },
@@ -56,11 +50,10 @@ export const projects: readonly Project[] = [
       {
         label: "Concept",
         title: "Eco Skylight House",
-        body: "The concept draws on an eco-house language of exposed natural materials such as rock, brick, and wood. A skylight installed parallel to the sloped roof introduces natural light into the interior.",
+        body: "I drew on an eco-house language of exposed natural materials such as rock, brick, and wood. I used a skylight installed parallel to the sloped roof to introduce natural light into the interior.",
       },
     ],
-    gallery: [livingImage, apartmentImage, bedroomImage, livingImage],
-    imagePlaceholder: true,
+    gallery: [],
   },
   {
     slug: "into-the-wild-wood-of-razer",
@@ -69,10 +62,8 @@ export const projects: readonly Project[] = [
     category: "Retail",
     year: "2023",
     location: "BCCF, Bandung",
-    cover: bedroomImage,
-    coverPosition: "center",
     summary: "A Razer retail concept translating its bold green identity into a jungle-inspired, technology-led environment.",
-    description: "The second studio project uses BCCF Bandung as the site for a branded retail environment. Jocelyn selected Razer, a gaming-technology company, as the project’s focus.",
+    description: "For my second studio project, I used BCCF Bandung as the site for a branded retail environment and selected Razer, a gaming-technology company, as the project’s focus.",
     facts: [
       { label: "Type", value: "Retail" },
       { label: "Location", value: "BCCF, Bandung" },
@@ -84,11 +75,10 @@ export const projects: readonly Project[] = [
       {
         label: "Concept",
         title: "Into the Wild Wood",
-        body: "The concept is built around four keywords: Bold, Jungle, Trust, and Relax. Together they connect Razer’s green identity and snake emblem with the site and its technological character.",
+        body: "I built the concept around four keywords: Bold, Jungle, Trust, and Relax. Together, they connect Razer’s green identity and snake emblem with the site and its technological character.",
       },
     ],
-    gallery: [bedroomImage, livingImage, apartmentImage, bedroomImage],
-    imagePlaceholder: true,
+    gallery: [],
   },
   {
     slug: "harth-chair",
@@ -97,10 +87,8 @@ export const projects: readonly Project[] = [
     category: "Furniture Design",
     year: "2023",
     location: "Academic Project",
-    cover: apartmentImage,
-    coverPosition: "center",
     summary: "A functional rattan chair exploring cultural amalgamation through rhythm, harmony, and shared identity.",
-    description: "Harth Chair responds to cultural diversity in Italy by presenting amalgamation as a way to combine cultural influences without erasing their individual characteristics.",
+    description: "With Harth Chair, I responded to cultural diversity in Italy by presenting amalgamation as a way to combine cultural influences without erasing their individual characteristics.",
     facts: [
       { label: "Type", value: "Furniture Design" },
       { label: "Year", value: "2023" },
@@ -112,21 +100,20 @@ export const projects: readonly Project[] = [
       {
         label: "Ideation",
         title: "Amalgamation",
-        body: "Amalgamation is the process of mixing two cultures to create something new without leaving either identity behind. It frames diversity as a source of harmony.",
+        body: "I used amalgamation—the process of mixing two cultures to create something new without leaving either identity behind—to frame diversity as a source of harmony.",
       },
       {
         label: "Construct Idea",
         title: "Harmony and Rhythm",
-        body: "The design combines rhythm and harmony as an expression of cultures coexisting in diversity, using the rhythm of an African djembe and the harmony associated with Italian pasta as references.",
+        body: "I combined rhythm and harmony to express cultures coexisting in diversity, using the rhythm of an African djembe and the harmony associated with Italian pasta as references.",
       },
       {
         label: "Manifestation",
         title: "From study to prototype",
-        body: "The chair developed through craftsmanship research, consultations, reviews, and production updates, resulting in a fully functional rattan prototype.",
+        body: "I developed the chair through craftsmanship research, consultations, reviews, and production updates, resulting in a fully functional rattan prototype.",
       },
     ],
-    gallery: [apartmentImage, bedroomImage, livingImage, apartmentImage],
-    imagePlaceholder: true,
+    gallery: [],
   },
   {
     slug: "project-04",
@@ -135,15 +122,12 @@ export const projects: readonly Project[] = [
     category: "Upcoming",
     year: "TBA",
     location: "Details to follow",
-    cover: livingImage,
-    coverPosition: "center",
-    summary: "An independent case-study page reserved for Jocelyn’s next project.",
-    description: "Project details will be added when the title, brief, metadata, and images are supplied.",
+    summary: "An independent case-study page reserved for my next project.",
+    description: "I’ll add the title, brief, metadata, and images when the project is ready.",
     facts: [{ label: "Status", value: "Content coming soon" }],
     focus: ["Title", "Project story", "Images"],
     sections: [],
-    gallery: [livingImage, bedroomImage, apartmentImage, livingImage],
-    imagePlaceholder: true,
+    gallery: [],
     upcoming: true,
   },
   {
@@ -153,15 +137,12 @@ export const projects: readonly Project[] = [
     category: "Upcoming",
     year: "TBA",
     location: "Details to follow",
-    cover: bedroomImage,
-    coverPosition: "center",
-    summary: "An independent case-study page reserved for Jocelyn’s next project.",
-    description: "Project details will be added when the title, brief, metadata, and images are supplied.",
+    summary: "An independent case-study page reserved for my next project.",
+    description: "I’ll add the title, brief, metadata, and images when the project is ready.",
     facts: [{ label: "Status", value: "Content coming soon" }],
     focus: ["Title", "Project story", "Images"],
     sections: [],
-    gallery: [bedroomImage, apartmentImage, livingImage, bedroomImage],
-    imagePlaceholder: true,
+    gallery: [],
     upcoming: true,
   },
   {
@@ -171,15 +152,12 @@ export const projects: readonly Project[] = [
     category: "Upcoming",
     year: "TBA",
     location: "Details to follow",
-    cover: apartmentImage,
-    coverPosition: "center",
-    summary: "An independent case-study page reserved for Jocelyn’s next project.",
-    description: "Project details will be added when the title, brief, metadata, and images are supplied.",
+    summary: "An independent case-study page reserved for my next project.",
+    description: "I’ll add the title, brief, metadata, and images when the project is ready.",
     facts: [{ label: "Status", value: "Content coming soon" }],
     focus: ["Title", "Project story", "Images"],
     sections: [],
-    gallery: [apartmentImage, livingImage, bedroomImage, apartmentImage],
-    imagePlaceholder: true,
+    gallery: [],
     upcoming: true,
   },
   {
@@ -189,15 +167,12 @@ export const projects: readonly Project[] = [
     category: "Upcoming",
     year: "TBA",
     location: "Details to follow",
-    cover: livingImage,
-    coverPosition: "center",
-    summary: "An independent case-study page reserved for Jocelyn’s next project.",
-    description: "Project details will be added when the title, brief, metadata, and images are supplied.",
+    summary: "An independent case-study page reserved for my next project.",
+    description: "I’ll add the title, brief, metadata, and images when the project is ready.",
     facts: [{ label: "Status", value: "Content coming soon" }],
     focus: ["Title", "Project story", "Images"],
     sections: [],
-    gallery: [livingImage, apartmentImage, bedroomImage, livingImage],
-    imagePlaceholder: true,
+    gallery: [],
     upcoming: true,
   },
 ];

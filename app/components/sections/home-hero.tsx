@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ArrowIcon } from "@/app/components/icons";
 import { contact, heroFacts, person, sectionCopy } from "@/app/data/portfolio";
-import portraitImage from "@/public/images/jocelyn-portrait-placeholder.png";
+import portraitImage from "@/public/images/jocelyn_profile.jpeg";
 
 export function HomeHero() {
   return (
@@ -10,13 +10,12 @@ export function HomeHero() {
         <div className="hero-portrait">
           <Image
             src={portraitImage}
-            alt="Temporary editorial portrait placeholder for Jocelyn; replace with her real photograph"
+            alt="Portrait of Jocelyn Quinella"
             fill
             preload
             placeholder="blur"
             sizes="(max-width: 820px) 100vw, 52vw"
           />
-          <p className="portrait-note">{sectionCopy.hero.portraitNote}</p>
         </div>
 
         <div className="hero-content">
@@ -41,7 +40,7 @@ export function HomeHero() {
                 href={contact.cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`View ${person.name}’s CV on Google Drive (opens in a new tab)`}
+                aria-label="View my CV on Google Drive (opens in a new tab)"
               >
                 View CV <ArrowIcon />
               </a>
