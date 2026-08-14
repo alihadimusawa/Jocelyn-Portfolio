@@ -5,11 +5,3 @@ export function ArrowIcon() {
     </svg>
   );
 }
-
-export function DownloadIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-      <path d="M12 3v12m-5-5 5 5 5-5M5 20h14" />
-    </svg>
-  );
-}

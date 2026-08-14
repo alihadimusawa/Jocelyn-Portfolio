@@ -50,7 +50,10 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         </div>
 
         <div className="case-title" data-reveal>
-          <Link href="/#projects" className="back-link">← All projects</Link>
+          <Link href="/#projects" className="back-link">
+            <span className="back-link-arrow" aria-hidden="true">←</span>
+            <span>All projects</span>
+          </Link>
           <div className="case-title-copy">
             <div className="case-number">Project / {project.number}</div>
             <h1>{project.title}</h1>

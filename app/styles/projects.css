@@ -1,0 +1,322 @@
+/* Projects */
+.project-showcase {
+  padding: clamp(110px, 13vw, 200px) clamp(20px, 4vw, 64px);
+  background: rgba(255, 255, 255, 0.64);
+  overflow: hidden;
+}
+
+.showcase-heading {
+  position: relative;
+  padding: 0 clamp(0px, 2vw, 32px) clamp(90px, 11vw, 160px);
+  display: grid;
+  grid-template-columns: 0.42fr 1.35fr 0.45fr;
+  align-items: start;
+  gap: 40px;
+}
+
+.showcase-heading::after {
+  position: absolute;
+  z-index: 0;
+  right: -2vw;
+  bottom: clamp(38px, 4vw, 65px);
+  content: "WORK";
+  color: rgba(77, 14, 18, 0.1);
+  font-size: clamp(100px, 20vw, 300px);
+  font-weight: 600;
+  line-height: 0.7;
+  letter-spacing: -0.1em;
+  pointer-events: none;
+}
+
+.showcase-heading > * {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow,
+.case-label {
+  margin: 6px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.eyebrow span::after {
+  width: 25px;
+  height: 1px;
+  margin-left: 12px;
+  display: inline-block;
+  content: "";
+  vertical-align: middle;
+  background: currentColor;
+}
+
+.showcase-heading h2,
+.service-heading h2,
+.process-intro h2 {
+  margin: 0;
+  font-size: clamp(58px, 8vw, 124px);
+  font-weight: 400;
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+}
+
+.showcase-heading h2 em,
+.service-heading h2 em {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.project-count {
+  justify-self: end;
+  padding-top: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.project-count strong {
+  color: var(--wine);
+  font-size: clamp(42px, 5vw, 74px);
+  font-weight: 400;
+  line-height: 0.76;
+  letter-spacing: -0.07em;
+}
+
+.project-count span {
+  margin: 0;
+  padding-top: 2px;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.contact-section svg,
+.next-project svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 240ms ease;
+}
+
+.project-wall {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(70px, 8vw, 120px) clamp(16px, 2vw, 30px);
+}
+
+.project-tile-1 {
+  grid-column: 1 / -1;
+}
+
+.project-tile-2,
+.project-tile-4,
+.project-tile-6 {
+  grid-column: 1 / 7;
+}
+
+.project-tile-3,
+.project-tile-5,
+.project-tile-7 {
+  grid-column: 7 / 13;
+}
+
+.project-visual {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  color: var(--paper);
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.project-tile-1 .project-visual {
+  aspect-ratio: 16 / 7.5;
+}
+
+.project-visual::after {
+  position: absolute;
+  z-index: 1;
+  inset: 42% 0 0;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(10, 10, 10, 0.8));
+  pointer-events: none;
+}
+
+.project-tile.is-upcoming .project-visual::after {
+  display: none;
+}
+
+.project-visual > img {
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.03);
+  transform: scale(1.07);
+  transition: filter 700ms ease, transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 15px;
+  color: var(--cream);
+  background: var(--wine);
+}
+
+.project-tile:nth-child(odd) .project-placeholder {
+  color: var(--wine);
+  background: var(--cream);
+}
+
+.project-tile:nth-child(odd).is-upcoming .project-overlay {
+  color: var(--ink);
+}
+
+.project-placeholder::before,
+.project-placeholder::after {
+  position: absolute;
+  content: "";
+  border: 1px solid currentColor;
+  opacity: 0.26;
+}
+
+.project-placeholder::before {
+  inset: 9%;
+}
+
+.project-placeholder::after {
+  width: 32%;
+  aspect-ratio: 1;
+  top: 12%;
+  right: 10%;
+  border-radius: 50%;
+}
+
+.project-placeholder span {
+  font-size: clamp(100px, 16vw, 260px);
+  font-weight: 400;
+  line-height: 0.7;
+  letter-spacing: -0.09em;
+}
+
+.project-placeholder small {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.project-accent {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  background: var(--wine);
+  opacity: 0;
+  mix-blend-mode: multiply;
+  transition: opacity 500ms ease;
+}
+
+.project-overlay {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  padding: clamp(18px, 2.7vw, 42px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  gap: 18px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.project-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 24px;
+}
+
+.project-title-row h3 {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(40px, 5.7vw, 92px);
+  font-weight: 400;
+  line-height: 0.84;
+  letter-spacing: -0.07em;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-tile:not(.project-tile-1) .project-title-row h3 {
+  font-size: clamp(32px, 4.1vw, 66px);
+}
+
+.project-arrow {
+  width: clamp(44px, 5vw, 72px);
+  height: clamp(44px, 5vw, 72px);
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  transition: color 300ms ease, background 300ms ease, transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-arrow svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+
+.project-caption {
+  position: relative;
+  padding: 15px 0 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-caption::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--wine);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-tile:nth-child(even) .project-caption::after {
+  background: var(--ink);
+}

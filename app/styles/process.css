@@ -1,0 +1,101 @@
+/* Process */
+.process-section {
+  padding: clamp(110px, 13vw, 200px) clamp(24px, 6vw, 96px);
+}
+
+.process-intro {
+  display: grid;
+  grid-template-columns: 0.46fr 1.5fr;
+  gap: 40px;
+}
+
+.process-path {
+  position: relative;
+  margin: clamp(90px, 12vw, 165px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  list-style: none;
+}
+
+.process-path::before {
+  position: absolute;
+  top: 12px;
+  right: 4%;
+  left: 1%;
+  height: 1px;
+  content: "";
+  background: var(--gray);
+  transform-origin: left;
+}
+
+.process-path::after {
+  position: absolute;
+  z-index: 0;
+  top: 12px;
+  right: 4%;
+  left: 1%;
+  height: 1px;
+  content: "";
+  background: var(--wine);
+  transform: scaleX(var(--process-progress, 1));
+  transform-origin: left;
+  will-change: transform;
+}
+
+.process-path li {
+  position: relative;
+  z-index: 1;
+  transition: color 300ms ease, transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-progress-wrap.is-scroll-animated .process-path li {
+  color: var(--muted);
+  transform: translateY(8px);
+}
+
+.process-progress-wrap.is-scroll-animated .process-path li.is-active {
+  color: var(--ink);
+  transform: translateY(0);
+}
+
+.process-path li > span {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  font-size: 8px;
+  font-weight: 600;
+  background: var(--paper);
+  transition: color 250ms ease, border-color 250ms ease, background 250ms ease, transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.process-path li.is-active > span {
+  color: var(--cream);
+  border-color: var(--wine);
+  background: var(--wine);
+  transform: scale(1.1);
+}
+
+.process-path li:last-child.is-active > span {
+  color: var(--wine);
+  border-color: var(--wine);
+  background: var(--cream);
+}
+
+.process-path li:hover > span {
+  color: var(--paper);
+  background: var(--ink);
+  scale: 1.25;
+}
+
+.process-path h3 {
+  max-width: 145px;
+  margin: 26px 16px 0 0;
+  font-size: clamp(16px, 1.55vw, 23px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}

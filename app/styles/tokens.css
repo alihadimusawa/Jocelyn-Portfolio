@@ -1,0 +1,12 @@
+:root {
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --gray: #c9cac5;
+  --muted: #6f706c;
+  --cream: #f5efc6;
+  --wine: #4d0e12;
+  --line: rgba(10, 10, 10, 0.2);
+  --inverse-line: rgba(255, 255, 255, 0.24);
+  --header-h: 72px;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

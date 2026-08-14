@@ -2,19 +2,20 @@ import type { Metadata, Viewport } from "next";
 import { AmbientBackground } from "./components/ambient-background";
 import { MotionInit } from "./components/motion-init";
 import { SiteHeader } from "./components/site-header";
+import { person } from "./data/portfolio";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Jocelyn Quinella — Interior Designer",
-    template: "%s — Jocelyn Quinella",
+    default: `${person.name} — ${person.role}`,
+    template: `%s — ${person.name}`,
   },
   description:
-    "Portfolio of Jocelyn Quinella, a Bandung-based interior designer and BINUS University student.",
+    `Portfolio of ${person.name}, a ${person.city}-based interior designer and BINUS University student.`,
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F5F5F2",
+  themeColor: "#F5EFC6",
   colorScheme: "light",
 };
 

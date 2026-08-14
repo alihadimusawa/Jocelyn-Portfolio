@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { contact, navigation, person } from "@/app/data/portfolio";
 import { Logo } from "./logo";
 import { SectionNavLink } from "./section-nav";
 
@@ -37,6 +38,11 @@ export function SiteHeader() {
   }, [pathname]);
 
   useEffect(() => {
+    const frame = window.requestAnimationFrame(() => setMenuOpen(false));
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname]);
+
+  useEffect(() => {
     if (!menuOpen) return;
 
     const previousOverflow = document.body.style.overflow;
@@ -60,13 +66,12 @@ export function SiteHeader() {
       <Logo />
 
       <nav className="header-nav" aria-label="Main navigation">
-        <SectionNavLink href="/#projects">Projects</SectionNavLink>
-        <SectionNavLink href="/#profile">Profile</SectionNavLink>
-        <SectionNavLink href="/#services">Services</SectionNavLink>
-        <SectionNavLink href="/#contact">Contact</SectionNavLink>
+        {navigation.map((item) => (
+          <SectionNavLink href={item.href} key={item.href}>{item.label}</SectionNavLink>
+        ))}
       </nav>
 
-      <a className="header-email" href="mailto:jocelynquinella@gmail.com">
+      <a className="header-email" href={contact.emailHref}>
         Start a project <span aria-hidden="true">↗</span>
       </a>
 
@@ -88,12 +93,11 @@ export function SiteHeader() {
         aria-hidden={!menuOpen}
       >
         <nav aria-label="Mobile navigation">
-          <SectionNavLink href="/#projects" onNavigate={closeMenu}>Projects</SectionNavLink>
-          <SectionNavLink href="/#profile" onNavigate={closeMenu}>Profile</SectionNavLink>
-          <SectionNavLink href="/#services" onNavigate={closeMenu}>Services</SectionNavLink>
-          <SectionNavLink href="/#contact" onNavigate={closeMenu}>Contact</SectionNavLink>
+          {navigation.map((item) => (
+            <SectionNavLink href={item.href} onNavigate={closeMenu} key={item.href}>{item.label}</SectionNavLink>
+          ))}
         </nav>
-        <p>Interior design · Bandung</p>
+        <p>Interior design · {person.city}</p>
       </div>
 
       <div

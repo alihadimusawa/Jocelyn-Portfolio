@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+const MOBILE_LAYOUT_MAX = 820;
+
 export function ProcessProgress({ children }: { children: React.ReactNode }) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +31,7 @@ export function ProcessProgress({ children }: { children: React.ReactNode }) {
 
     const update = () => {
       const bounds = element.getBoundingClientRect();
-      if (window.innerWidth <= 820) {
+      if (window.innerWidth <= MOBILE_LAYOUT_MAX) {
         const marker = window.innerHeight * 0.62;
         target = Math.max(0, Math.min(1, (marker - bounds.top - 12) / Math.max(bounds.height - 24, 1)));
       } else {
