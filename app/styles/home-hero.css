@@ -143,7 +143,12 @@
   letter-spacing: 0.1em;
   white-space: nowrap;
   text-transform: uppercase;
-  transition: color 200ms ease, background 200ms ease;
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
 }
 
 .action svg {
@@ -154,6 +159,7 @@
   stroke-width: 1.6;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transition: transform 200ms ease;
 }
 
 .action-solid {
@@ -167,8 +173,24 @@
 }
 
 .action-outline {
-  border: 0;
-  border-bottom: 1px solid var(--ink);
+  color: var(--wine);
+  border-color: var(--wine);
+  background: transparent;
+}
+
+.action-outline:is(:hover, :focus-visible) {
+  color: var(--cream);
+  background: var(--wine);
+  box-shadow: 0 10px 24px rgb(77 14 18 / 0.18);
+  transform: translateY(-2px);
+}
+
+.action-outline:is(:hover, :focus-visible) svg {
+  transform: translate(3px, -3px);
+}
+
+.action-outline:focus-visible {
+  outline-color: var(--wine);
 }
 
 .hero-facts {

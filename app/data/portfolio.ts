@@ -7,7 +7,7 @@ export const person = {
   city: "Bandung",
   countryCode: "ID",
   country: "Indonesia",
-  age: 21,
+  age: 22,
   experienceYears: 2,
 } as const;
 
@@ -18,7 +18,7 @@ export const contact = {
   emailHref: "mailto:jocelynquinella@gmail.com",
   phone: "+62 877-1119-1307",
   phoneHref: "tel:+6287711191307",
-  cvUrl: "https://drive.google.com/file/d/1_hJMKX5bak-BXuEqiWAPcjr6c_O2oSNb/view",
+  cvUrl: "https://drive.google.com/file/d/1gTf0Zj1w8hY2LbR9PaF6oQ15vpR8U4dG/view?usp=drive_link",
   socialLinks: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jocelyn-quinella/" },
     { label: "Instagram", href: "https://www.instagram.com/jocelynqaa/" },
@@ -84,7 +84,7 @@ export const heroFacts = [
 
 export const profile = {
   facts: [
-    { label: "Age", value: String(person.age) },
+    { label: "Age", value: `${person.age} years old` },
     { label: "Based in", value: person.city },
     { label: "Experience", value: `${person.experienceYears} years` },
   ],
